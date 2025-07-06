@@ -9,9 +9,8 @@ import jakarta.persistence.Table;
 @Table(name = "user_roblox")
 public class UserRoblox {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
     private String username;
-    @Column
     private String password;
 }
