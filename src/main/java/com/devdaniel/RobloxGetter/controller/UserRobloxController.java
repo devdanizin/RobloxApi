@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class UserRobloxController {
     }
 
     @PostMapping
-    public void create(UserRoblox user) {
+    public void create(@RequestBody UserRoblox user) {
         repository.save(user);
     }
 
