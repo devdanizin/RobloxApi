@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("api/v1")
 @RequiredArgsConstructor
 public class UserRobloxController {
 
@@ -16,7 +16,9 @@ public class UserRobloxController {
 
     @GetMapping
     public List<UserRoblox> getAll() {
-        return repository.findAll();
+        List<UserRoblox> all = repository.findAll();
+        System.out.println("Usuários encontrados: " + all.size());
+        return all;
     }
 
     @PostMapping
